@@ -1,0 +1,200 @@
+
+Planning:
+
+File Sctructure:
+The Brain.
+main.java. It will be the brain and coordination of the app. From here the main while loop will be running that gets the programme working in memory. The coordination of all the classes goes here. 
+Category.java. Category class.
+Account.java. Account class. 
+Expense.java. Expense class. 
+Expenses.csv  Will store the data of the class. 
+Category.csv Will store the data of the class. 
+Account.csv Will store the data of the class. 
+
+Classes:
+
+- main
+    * This class will contain the while loop and the logic of all the programme. It is where all the classes gather together to get a programme running. 
+    * It handle written the data into a file. Load and save the data into each file. 
+    * Methods:
+     - A method to make a report of all the cetegories. 
+     - Print a list of all accounts.
+      
+
+- Category.
+    * String name: e.g. String Name = "Incomes" or subscription, food, holidays, houaing, etc. 
+    * String description: . e.g. String description = "Only monthly rent"
+    * Double BudgetCategory. each Category will have a budget. 
+    * Getters and setters. 
+    * Methods:
+      
+   
+- Account:
+    * Catgory. It will have assigned a category object. e.g. "Housing"
+    * String name: e.g. String Name = "Rent"
+    * String description: . e.g. String description = "Only monthly rent"
+    * Double. budgetAccount: Each account will have also its own budget that will summ up to the category budget. 
+    * Getter and setters
+    * Methods:
+       
+
+- Expense:
+    * Account object. An expenses must have assigned an account. e,g. "rent"
+    * Double AmountExpense: A variable to store how much for the account was expensed.
+    * Date AmountDate: When it was expended.
+    *  Getters and setters.
+    * Methods:
+       
+
+ 
+Narrative Description.
+The app will have a main menu with main options:
+1- Categories --> 1- Add  2- Delete  3- Modify- 4- List 5- Return
+2- Accounts --> 1- Add  2- Delete  3- Modify 4- List 5- Return
+3- Expenses --> 1- Add  2- Delete  3- Modify 4- List 5- Return
+4-Report. --> "dont know yet"
+5- Quit
+
+* The user will need to add categories, then accounts, and the budget for each account monthly. 
+* The user will be able to delete or modify categories, accounts and expenses.
+
+There will be daily, monthly and yearly expenses and budget,and an alert will trigger if the user exceed. 
+
+main.java file
+
+- Load the existing csv files for each category: Secuence:
+1- Category
+2- Account
+3- Expenses
+
+variables I need to initialise:
+
+Arrays:
+- Category categoryList
+- Account accountList
+- Expense expensesList
+
+while input-user != 5 (quit) { 
+all the logic goes here to navigate through the app
+
+
+
+    switch from all the options:
+    1- Categories {
+        while loop to navigate this menu:
+        while user-input != 5 {
+         
+            Another switch to navigate options:
+            1- add {
+                FLow: 
+                1- Get user input: Ask for the name, monthly budget, and description.
+                2- Create the item: Bundle those inputs into a new Category object.
+                3- Store it: Add the new Category to categoryList.
+            }
+            2- delete {
+                1-Prompt: Ask the user for the name of the category they want to remove.
+                2-Search: Look through categoryList to find a Category with that matching name.
+                3- Act: If found, remove it from the list.
+                        Expenses: Find all accounts belonging to the category, then delete every expense linked to those accounts.
+                        Accounts: Delete all accounts assigned to the target category.
+                        Category: Remove the target category from categoryList.
+                4- Handle missing item: If no match is found, let the user know.
+            }
+            3- Modify {
+                1-Prompt: Ask the user for the name of the category they want to edit.
+                2-Search: Look through categoryList to find a Category with that matching name.
+                3- Act: If found, ask the user the new updates.
+                        Edit the item with the new value. 
+                4- Handle missing item: If no match is found, let the user know.
+                logic to add a category to the list and return to the submenu
+            }
+            4- List {
+                Iterate through the list and print each field
+            }
+            5- Retrun {
+                Logic to return to the main menu
+            }
+        }    
+    
+    2- Account {
+        while loop to navigate this menu:
+        while user-input != 5 {
+         
+            Another switch to navigate options:
+            1- add {
+                logic to add a category to the list and return to the submenu
+            }
+            2- delete {
+                logic to add a category to the list and return to the submenu
+            }
+            3- Modify {
+                logic to add a category to the list and return to the submenu
+            }
+            4- List {
+                logic to add a category to the list and return to the submenu
+            }
+            5- Retrun {
+                Logic to return to the main menu
+            }
+        }    
+    
+    3- Expenses {
+       while loop to navigate this menu:
+        while user-input != 5 {
+         
+            Another switch to navigate options:
+            1- add {
+                logic to add a category to the list and return to the submenu
+            }
+            2- delete {
+                logic to add a category to the list and return to the submenu
+            }
+            3- Modify {
+                logic to add a category to the list and return to the submenu
+            }
+            4- List {
+                logic to add a category to the list and return to the submenu
+            }
+            5- Retrun {
+                Logic to return to the main menu
+            }
+        }    
+    4- Report {
+        while loop to navigate this menu:
+        while user-input != 5 {
+        Another switch to navigate options:
+        1- Daily report
+            1- Iterate expenses array
+            2- For each accountf find its linked Category to show on the report.
+            3- Filter and sum all expenses for that account for the target timeframe (today, this month, or this year).
+            4- Subtract that total from the account's budget target to get the remaining balance.
+            5- Display the results in columns.
+
+        2- Monthy report
+        (Same logic as daily report)
+        3- Year Report
+        (Same logic as daily report)
+        5- Retrun {
+            Logic to return to the main menu
+        }
+        }
+    
+    5- SAVE {
+        Logic to manually save the current state and return to the main menu. 
+    }
+    
+    
+    6- QUIT {
+        Before the programme really exit, it will need to save all the data in memory. 
+        Exit the programme. 
+    }
+
+
+
+
+      
+    
+
+
+
+} # This while loop will be the main loop that 
